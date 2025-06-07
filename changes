@@ -8,3 +8,12 @@ DevEngine makes loop public and adds convenient render() method to start rendere
 
 v2.0.1
 forgot to export DevEngine from index.ts; fixed.
+
+v3.0.0
+simplified further
+gameloop implementation was causing issues with dyanmic objects
+will add step methods to individual objects instead
+removed step and restart from gameLoop
+renamed addEntity to add() in GameEngine
+made loop and renderer public again so client can access individually
+changed speed() to setRunRate() in GameLoop

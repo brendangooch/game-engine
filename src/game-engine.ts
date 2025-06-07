@@ -7,15 +7,15 @@ import { GameLoop, type iScreenEntity, Renderer } from "./index.js";
 
 export class GameEngine {
 
-    protected gameLoop: GameLoop;
-    protected renderer: Renderer;
+    public gameLoop: GameLoop;
+    public renderer: Renderer;
 
     public constructor(canvas: Canvas) {
         this.gameLoop = new GameLoop();
         this.renderer = new Renderer(canvas);
     }
 
-    public addEntity(entity: iScreenEntity | iScreenEntity[]): void {
+    public add(entity: iScreenEntity | iScreenEntity[]): void {
         this.gameLoop.add(entity);
         this.renderer.add(entity);
     }

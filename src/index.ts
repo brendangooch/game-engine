@@ -4,17 +4,16 @@
 
 import type { Canvas } from "@brendangooch/canvas";
 
-export interface iRenderable {
-    render(canvas: Canvas): void;
+export interface iUpdateable {
+    update(deltaTime: number): void;
 }
 
-export interface iUpdateable {
-    update(deltaTime: number, doComplete: boolean): void;
+export interface iRenderable {
+    render(canvas: Canvas): void;
 }
 
 export interface iScreenEntity extends iRenderable, iUpdateable { }
 
 export { GameEngine } from "./game-engine.js";
-export { DevEngine } from "./dev-engine.js";
 export { GameLoop } from "./game-loop.js";
 export { Renderer } from "./renderer.js";
