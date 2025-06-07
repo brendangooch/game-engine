@@ -15,5 +15,6 @@ export interface iUpdateable {
 export interface iScreenEntity extends iRenderable, iUpdateable { }
 
 export { GameEngine } from "./game-engine.js";
+export { DevEngine } from "./dev-engine.js";
 export { GameLoop } from "./game-loop.js";
 export { Renderer } from "./renderer.js";

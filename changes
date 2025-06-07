@@ -5,3 +5,6 @@ re-factored GameLoop, removing lots of unnecessary methods
 can accomplish the same functionality with far fewer methods
 made gameLoop and renderer private in Engine and created separate DevEngine for development
 DevEngine makes loop public and adds convenient render() method to start renderer but allow fine grain control over the loop
+
+v2.0.1
+forgot to export DevEngine from index.ts; fixed.
