@@ -8,12 +8,11 @@ export interface iRenderable {
     render(canvas: Canvas): void;
 }
 
-export interface iLoopable {
-    update(deltaTime: number): void;
-    scroll(elapsed: number): void;
+export interface iUpdateable {
+    update(deltaTime: number, doComplete: boolean): void;
 }
 
-export interface iScreenEntity extends iLoopable, iRenderable { }
+export interface iScreenEntity extends iRenderable, iUpdateable { }
 
 export { GameEngine } from "./game-engine.js";
 export { GameLoop } from "./game-loop.js";

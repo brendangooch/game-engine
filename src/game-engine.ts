@@ -3,21 +3,19 @@
  */
 
 import { Canvas } from "@brendangooch/canvas";
-import { GameLoop } from "./game-loop.js";
-import { Renderer } from "./renderer.js";
-import type { iScreenEntity } from "./index.js";
+import { GameLoop, type iScreenEntity, Renderer } from "./index.js";
 
 export class GameEngine {
 
-    public gameLoop: GameLoop;
-    public renderer: Renderer;
+    protected gameLoop: GameLoop;
+    protected renderer: Renderer;
 
     public constructor(canvas: Canvas) {
         this.gameLoop = new GameLoop();
         this.renderer = new Renderer(canvas);
     }
 
-    public add(entity: iScreenEntity | iScreenEntity[]): void {
+    public addEntity(entity: iScreenEntity | iScreenEntity[]): void {
         this.gameLoop.add(entity);
         this.renderer.add(entity);
     }
