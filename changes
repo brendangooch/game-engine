@@ -17,3 +17,7 @@ removed step and restart from gameLoop
 renamed addEntity to add() in GameEngine
 made loop and renderer public again so client can access individually
 changed speed() to setRunRate() in GameLoop
+
+v4.0.0
+clamped speed set by setRunRate() method in GameLoop to between 0.1 and 5
+a breaking-change I guess so bumped version

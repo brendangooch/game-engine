@@ -3,8 +3,12 @@
  */
 
 import type { iUpdateable } from "./index.js";
+import { clamp } from "@brendangooch/maths";
 
 export class GameLoop {
+
+    private static MIN_SPEED: number = 0.1;
+    private static MAX_SPEED: number = 5;
 
     private running: boolean = false;
     private RAF: ReturnType<typeof requestAnimationFrame>;
@@ -14,7 +18,7 @@ export class GameLoop {
     private deltaTime: number = 0;
 
     public setRunRate(speed: number): void {
-        this.runRate = speed;
+        this.runRate = clamp(speed, GameLoop.MIN_SPEED, GameLoop.MAX_SPEED);
     }
 
     public add(updateable: iUpdateable | iUpdateable[]): void {
